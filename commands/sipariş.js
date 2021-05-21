@@ -4,7 +4,7 @@ const ar = require("../sipariş.js");
 
 exports.run = async (client, message, args) => {
   
-    let logkanal = ar.logkanal;
+    let logkanal = "logid";
 
     let embed = new Discord.MessageEmbed()
     .setTitle("Ghost Code Sipariş Menüsü")
@@ -38,13 +38,13 @@ exports.run = async (client, message, args) => {
       if(reaction._emoji.name == "1️⃣") {
         msg.reactions.removeAll().catch(error => { console.log("emojileri silemiorum.") })
         await msg.edit(embed2)
-        client.guilds.cache.get(message.guild.id).channels.cache.get(logkanal).send("<@"+message.author.id+"> adlı kullanıcı **Sipariş BOT** adlı botun siparişini verdi!");
+        client.guilds.cache.get(message.guild.id).channels.cache.get(logkanal).send("<@"+message.author.id+"> adlı kullanıcı **"+ar.bot1_isim+"** adlı botun siparişini verdi!");
       };
 
       if(reaction._emoji.name == "2️⃣") {
         msg.reactions.removeAll().catch(error => { console.log("emojileri silemiorum.") })
         await msg.edit(embed3);
-        client.guilds.cache.get(message.guild.id).channels.cache.get(logkanal).send("<@"+message.author.id+"> adlı kullanıcı **OwO BOT** adlı botun siparişini verdi!");
+        client.guilds.cache.get(message.guild.id).channels.cache.get(logkanal).send("<@"+message.author.id+"> adlı kullanıcı **"+ar.bot2_isim+"** adlı botun siparişini verdi!");
         
       };
     });
